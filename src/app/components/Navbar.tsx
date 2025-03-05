@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-transparent text-white py-2">
+    <nav className="bg-white text-black py-2">
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
         {/* Logo on navbar */}
         <div>
@@ -29,7 +29,7 @@ const Navbar = () => {
         <button
           onClick={toggleMenu}
           type="button"
-          className="block md:hidden text-white hover:text-purple-600 focus:outline-none"
+          className="block md:hidden text-black hover:text-purple-600 focus:outline-none"
         >
           <svg
             className="w-5 h-5"
@@ -55,11 +55,6 @@ const Navbar = () => {
           } w-full md:block md:w-auto`}
         >
           <ul className="flex flex-col p-2 md:flex-row md:space-x-8 rtl:space-x-reserve md:bg-transparent mt-4 md:mt-0 font-medium bg-customPurple border rounded-lg border-purple-600 md:border-transparent">
-            <li>
-              {/* <Link className={`block py-2 px-3 ${pathname === '/' ? 'text-purple-600':'text-white hover:text-purple-600'}`} href={"/"}>
-          Home
-          </Link> */}
-            </li>
             <li>
               <Link
                 className={`block py-2 px-3 ${
@@ -102,10 +97,12 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* GitHub icon */}
-        <a className="hidden md:block" href="https://github.com/razielnavarro">
-          <img className="w-7" src="assets\GitHubRetroWhite.png"></img>
-        </a>
+        {/* Phone number */}
+        <div>
+          <a href="tel:+507 6666-6666" className="text-black">
+            +507 6666-6666
+          </a>
+        </div>
       </div>
     </nav>
   );
