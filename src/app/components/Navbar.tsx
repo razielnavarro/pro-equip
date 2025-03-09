@@ -60,7 +60,7 @@ const Navbar = () => {
                 className={`block py-2 px-3 ${
                   pathname === "/skills"
                     ? "text-purple-600"
-                    : "text-white hover:text-purple-600"
+                    : "text-black hover:text-purple-600"
                 }`}
                 href={"#skills"}
                 onClick={toggleMenu}
@@ -73,7 +73,7 @@ const Navbar = () => {
                 className={`block py-2 px-3 ${
                   pathname === "/projects"
                     ? "text-purple-600"
-                    : "text-white hover:text-purple-600"
+                    : "text-black hover:text-purple-600"
                 }`}
                 href={"#projects"}
                 onClick={toggleMenu}
@@ -86,7 +86,7 @@ const Navbar = () => {
                 className={`block py-2 px-3 ${
                   pathname === "/projects"
                     ? "text-purple-600"
-                    : "text-white hover:text-purple-600"
+                    : "text-black hover:text-purple-600"
                 }`}
                 href={"#projects"}
                 onClick={toggleMenu}
