@@ -23,14 +23,15 @@ export default function Home() {
         </div>
 
         {/* Section with about us */}
-        <section className="bg-white py-12 px-4">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        <section className="bg-white py-12 px-4 relative">
+          <div className="absolute inset-0 w-2/5 bg-red-800"></div>
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10">
             {/* LEFT COLUMN: Image */}
             <div className="w-full md:w-1/2">
               <img
                 src="/assets/aboutUs.jpg"
                 alt="Hombres con cascos de construcción"
-                className="rounded-lg shadow-lg object-cover"
+                className="rounded-lg shadow-lg object-cover h-120"
               />
             </div>
             {/* RIGHT COLUMN: Text Content */}
@@ -61,7 +62,7 @@ export default function Home() {
 
               {/* Additional Paragraph Text */}
               <p className="text-gray-700 leading-relaxed mb-6">
-                además, desarrollamos sistemas de generación de energía con
+                Además, desarrollamos sistemas de generación de energía con
                 paneles solares para clientes residenciales, comerciales e
                 industriales, garantizando eficiencia y sostenibilidad en cada
                 proyecto.
