@@ -18,10 +18,7 @@ const Navbar = () => {
         {/* Logo on navbar */}
         <div>
           <Link href="/" prefetch={true}>
-            <img
-              src="assets/logo.jpg"
-              className="object-contain w-32 h-32"
-            ></img>
+            <img src="assets/logo.png" className="h-[80px]"></img>
           </Link>
         </div>
 
@@ -29,7 +26,7 @@ const Navbar = () => {
         <button
           onClick={toggleMenu}
           type="button"
-          className="block md:hidden text-black hover:text-purple-600 focus:outline-none"
+          className="block md:hidden text-black hover:text-red-800 focus:outline-none"
         >
           <svg
             className="w-5 h-5"
@@ -58,11 +55,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`block py-2 px-3 ${
-                  pathname === "/skills"
-                    ? "text-purple-600"
-                    : "text-black hover:text-purple-600"
+                  pathname === "/inicio"
+                    ? "text-black"
+                    : "text-black hover:text-red-800"
                 }`}
-                href={"#skills"}
+                href={"#inicio"}
                 onClick={toggleMenu}
               >
                 Inicio
@@ -71,11 +68,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`block py-2 px-3 ${
-                  pathname === "/projects"
-                    ? "text-purple-600"
-                    : "text-black hover:text-purple-600"
+                  pathname === "/servicios"
+                    ? "text-black"
+                    : "text-black hover:text-red-800"
                 }`}
-                href={"#projects"}
+                href={"#servicios"}
                 onClick={toggleMenu}
               >
                 Servicios
@@ -84,11 +81,11 @@ const Navbar = () => {
             <li>
               <Link
                 className={`block py-2 px-3 ${
-                  pathname === "/projects"
-                    ? "text-purple-600"
-                    : "text-black hover:text-purple-600"
+                  pathname === "/proyectos"
+                    ? "text-black"
+                    : "text-black hover:text-red-800"
                 }`}
-                href={"#projects"}
+                href={"#proyectos"}
                 onClick={toggleMenu}
               >
                 Proyectos
