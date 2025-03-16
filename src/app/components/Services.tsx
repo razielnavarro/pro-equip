@@ -1,43 +1,49 @@
 import React from "react";
 
 interface Service {
-  image: string;
+  icon: string; // Could be a path to an SVG or PNG, or an imported component
   title: string;
 }
 
 interface ServicesSectionProps {
   services: Service[];
+  backgroundImage: string; // Add background image URL as a prop
 }
 
-const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
+const ServicesSection: React.FC<ServicesSectionProps> = ({
+  services,
+  backgroundImage,
+}) => {
   return (
-    <section className="py-12 bg-white bg-cover bg-center">
+    <section
+      className="py-12 bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})` }} // Apply background image here
+    >
       <div className="container mx-auto px-4">
         {/* Section Heading */}
-        <h2 className="text-5xl font-bold text-center mb-2">
+        <h2 className="text-5xl font-bold text-center mb-2 text-white">
           Nuestros Servicios
         </h2>
         <div className="flex justify-center mb-8">
           <div className="w-24 h-1 bg-red-800"></div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white shadow-sm hover:shadow-md transition-shadow rounded-md overflow-hidden"
+              className="relative flex items-center justify-center h-32 bg-red-800 rounded-md cursor-pointer group"
             >
-              {/* Image */}
+              {/* Icon in the center */}
               <img
-                src={service.image}
+                src={service.icon}
                 alt={service.title}
-                className="w-full h-48 object-cover"
+                className="h-10 w-10"
               />
-
-              {/* Title & Description */}
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              {/* Title appears on hover */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-center text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {service.title}
               </div>
             </div>
           ))}
@@ -47,39 +53,44 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
   );
 };
 
-// Example usage of the ServicesSection component
+// Example usage of the modified ServicesSection component
 const ServicesComponent = () => {
   const servicesData: Service[] = [
     {
       title: "Diseño y Construcción de Redes Eléctricas",
-      image: "/assets/serviciosTest.jpg",
+      icon: "/assets/icons/electrica.svg",
     },
     {
       title: "Instalación de Transformadores y Equipos Eléctricos",
-      image: "/assets/serviciosTest.jpg",
+      icon: "/assets/icons/instalacion.svg",
     },
     {
       title: "Pruebas y Mediciones Eléctricas",
-      image: "/assets/serviciosTest.jpg",
+      icon: "/assets/icons/mediciones.svg",
     },
     {
       title: "Energía Solar y Fotovoltaicas",
-      image: "/assets/serviciosTest.jpg",
+      icon: "/assets/icons/solar.svg",
     },
     {
       title: "Sistemas de Puesta a Tierra y Corrección de Potencia",
-      image: "/assets/serviciosTest.jpg",
+      icon: "/assets/icons/tierra.svg",
     },
     {
       title:
         "Infraestructura Eléctrica para Proyectos Industriales y Urbanizaciones",
-      image: "/assets/serviciosTest.jpg",
+      icon: "/assets/icons/infraestructura.svg",
     },
   ];
 
+  const backgroundImage = "/path/to/your/background-image.jpg"; // Add your background image URL here
+
   return (
     <div>
-      <ServicesSection services={servicesData} />
+      <ServicesSection
+        services={servicesData}
+        backgroundImage={backgroundImage}
+      />
     </div>
   );
 };
