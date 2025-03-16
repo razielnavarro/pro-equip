@@ -3,6 +3,7 @@ import ContactStrip from "./components/ContactStrip";
 import ServicesComponent from "./components/Services";
 import AboutUs from "./components/AboutUs";
 import ProjectsComponent from "./components/Projects";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -25,16 +26,23 @@ export default function Home() {
           </section>
         </div>
         {/* Section with about us */}
-        <AboutUs />
+        <div id="nosotros">
+          <AboutUs />
+        </div>
         {/* Section with services */}
-        <section className="relative min-h-[75vh] bg-[url(/assets/servicios.png)] bg-cover bg-center">
+        <section
+          className="relative min-h-[75vh] bg-[url(/assets/servicios.png)] bg-cover bg-center"
+          id="servicios"
+        >
           <ServicesComponent />
         </section>
         {/* Section with projects */}
-        <ProjectsComponent />
+        <div id="proyectos">
+          <ProjectsComponent />
+        </div>
       </main>
-
       {/* Footer for the website */}
+      <Footer />
     </>
   );
 }

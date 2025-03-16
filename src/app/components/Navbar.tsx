@@ -68,6 +68,19 @@ const Navbar = () => {
             <li>
               <Link
                 className={`block py-2 px-3 ${
+                  pathname === "/nosotros"
+                    ? "text-black"
+                    : "text-black hover:text-red-800"
+                }`}
+                href={"#nosotros"}
+                onClick={toggleMenu}
+              >
+                Nosotros
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`block py-2 px-3 ${
                   pathname === "/servicios"
                     ? "text-black"
                     : "text-black hover:text-red-800"
