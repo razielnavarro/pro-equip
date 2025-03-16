@@ -21,7 +21,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
     >
       <div className="container mx-auto px-4">
         {/* Section Heading */}
-        <h2 className="text-5xl font-bold text-center mb-2 text-white">
+        <h2 className="text-5xl font-bold text-center mb-4 text-white">
           Nuestros Servicios
         </h2>
         <div className="flex justify-center mb-8">
@@ -53,7 +53,6 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
   );
 };
 
-// Example usage of the modified ServicesSection component
 const ServicesComponent = () => {
   const servicesData: Service[] = [
     {
@@ -83,7 +82,7 @@ const ServicesComponent = () => {
     },
   ];
 
-  const backgroundImage = "/path/to/your/background-image.jpg"; // Add your background image URL here
+  const backgroundImage = "/path/to/your/background-image.jpg";
 
   return (
     <div>
