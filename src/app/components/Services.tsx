@@ -16,8 +16,8 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
 }) => {
   return (
     <section
-      className="py-12 bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }} // Apply background image here
+      className="py-12 bg-cover bg-center items-center w-2/4 mx-auto"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="container mx-auto px-4">
         {/* Section Heading */}
@@ -33,13 +33,13 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative flex items-center justify-center h-32 bg-red-800 rounded-md cursor-pointer group"
+              className="relative flex items-center justify-center bg-red-800 rounded-md cursor-pointer group aspect-square"
             >
               {/* Icon in the center */}
               <img
                 src={service.icon}
                 alt={service.title}
-                className="h-10 w-10"
+                className="h-24 w-24"
               />
               {/* Title appears on hover */}
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-center text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
