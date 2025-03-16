@@ -13,7 +13,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
   const toggleShowMore = () => setShowMore(!showMore);
 
   return (
-    <section className="py-12 bg-gray-100 mx-auto w-3/4">
+    <section className="py-12 mx-auto w-3/4">
       <div className="container mx-auto px-4">
         {/* Section Heading */}
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-800">
