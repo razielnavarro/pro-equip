@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import ContactStrip from "./components/ContactStrip";
 import ServicesComponent from "./components/Services";
 import AboutUs from "./components/AboutUs";
+import ProjectsComponent from "./components/Projects";
 
 export default function Home() {
   return (
@@ -29,6 +30,8 @@ export default function Home() {
         <section className="relative min-h-[75vh] bg-[url(/assets/servicios.png)] bg-cover bg-center">
           <ServicesComponent />
         </section>
+        {/* Section with projects */}
+        <ProjectsComponent />
       </main>
 
       {/* Footer for the website */}
