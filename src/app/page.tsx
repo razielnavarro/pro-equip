@@ -35,7 +35,7 @@ export default function Home() {
           {/* Diamond/Polygon Image on top */}
           <div className="absolute top-[54%] right-10 transform -translate-y-1/2 z-15">
             <img
-              src="/assets/tasfa.png"
+              src="/assets/diamond.png"
               alt="Worker"
               className="w-[1000px] h-auto"
             />
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
         {/* Section with services */}
         <section
-          className="relative min-h-[75vh] bg-[url(/assets/diamond.png)] bg-cover bg-center"
+          className="relative min-h-[75vh] bg-[url(/assets/servicios.png)] bg-cover bg-center"
           id="servicios"
         >
           <ServicesComponent />
