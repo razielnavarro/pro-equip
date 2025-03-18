@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <section className="bg-white py-12 px-4 relative">
+    <section className="bg-white py-12 px-4 relative z-0">
       <div className="absolute inset-0 w-2/5 bg-red-800"></div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10">
         {/* LEFT COLUMN: Image */}
@@ -12,7 +12,7 @@ const AboutUs = () => {
           />
         </div>
         {/* RIGHT COLUMN: Text Content */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 pt-2">
           {/* Small Heading */}
           <h2 className="text-sm font-bold text-red-600 tracking-widest uppercase mb-2">
             SOBRE NOSOTROS
