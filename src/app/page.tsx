@@ -47,10 +47,7 @@ export default function Home() {
           <AboutUs />
         </div>
         {/* Section with services */}
-        <section
-          className="relative min-h-[75vh] bg-[url(/assets/servicios.png)] bg-cover bg-center"
-          id="servicios"
-        >
+        <section id="servicios">
           <ServicesComponent />
         </section>
         {/* Section with projects */}
