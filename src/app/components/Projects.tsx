@@ -56,18 +56,18 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
 // Example usage of the ProjectsSection component
 const ProjectsComponent = () => {
   const projectImages: string[] = [
-    "/assets/projects/conexionAnillo.jpg",
+    "/assets/projects/conexion_anillo.jpg",
     "/assets/projects/obaldia_cambio_aceite.jpg",
-    "/assets/projects/MaeLewis.jpg",
-    "/assets/projects/trabajo.jpg",
+    "/assets/projects/mae_lewis.jpg",
+    "/assets/projects/trabajo_tierra.jpg",
     "/assets/projects/medidor_electrico_2.jpg",
-    "/assets/projects/voith.jpg",
+    "/assets/projects/maquina_voith.jpg",
     "/assets/projects/medidor_electrico.jpg",
     "/assets/projects/2500_kva.jpg",
     "/assets/projects/equipo.jpg",
     "/assets/projects/equipo_de_trabajo.jpg",
     "/assets/projects/equipo_de_trabajo_2.jpg",
-    "/assets/projects/voith_indar.jpg",
+    "/assets/projects/voith_y_indar.jpg",
   ];
 
   return (

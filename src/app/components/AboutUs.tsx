@@ -6,7 +6,7 @@ const AboutUs = () => {
         {/* LEFT COLUMN: Image */}
         <div className="w-full md:w-1/2">
           <img
-            src="/assets/aboutUs.jpg"
+            src="/assets/poste_electrico.jpg"
             alt="Hombres con cascos de construcción"
             className="rounded-lg shadow-lg object-cover h-120"
           />
