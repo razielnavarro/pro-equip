@@ -19,7 +19,7 @@ export default function Home() {
         {/* Section with name and role */}
         <div className="relative h-screen w-full overflow-visible z-20">
           {/* Background image hero */}
-          <div className="flex flex-col-reverse items-center md:flex-row md:justify-center h-full w-full bg-[url('/assets/fullBg.png')] bg-no-repeat bg-cover bg-center">
+          <div className="flex flex-col-reverse items-center md:flex-row md:justify-center h-full w-full bg-[url('/assets/FullBg.png')] bg-no-repeat bg-cover bg-center">
             <section className="gap-y-2 text-center md:text-left px-10 mb-12 w-full flex items-center justify-center md:justify-start">
               <div className="max-w-[800px]">
                 <h1 className="text-4xl md:text-5xl text-white font-bold">
