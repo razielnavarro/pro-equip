@@ -19,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${defaultFont.className} antialiased relative debug-screens`}
-      >
+      <body className={`${defaultFont.className} antialiased relative`}>
         {children}
       </body>
     </html>

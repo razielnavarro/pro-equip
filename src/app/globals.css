@@ -19,8 +19,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@plugin "tailwindcss-debug-screens" {
+/* @plugin "tailwindcss-debug-screens" {
   classname: "debug-screens";
   position: "bottom, left";
   prefix: "screen: ";
-}
+} */
