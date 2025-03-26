@@ -34,7 +34,7 @@ export default function AboutUs() {
 
           {/* Additional Paragraph Text */}
           <p className="text-gray-700 leading-relaxed mb-6">
-            Con más de 25 años de experiencia, ofrecemos soluciones para
+            Con 30 años de experiencia, ofrecemos soluciones para
             urbanizaciones, proyectos industriales y comerciales, incluyendo
             instalación de transformadores, pruebas eléctricas, medición de
             calidad del servicio y corrección del factor de potencia.
