@@ -109,8 +109,8 @@ const Navbar = () => {
 
         {/* Phone number */}
         <div>
-          <a href="tel:+507 6666-6666" className="text-black">
-            +507 6666-6666
+          <a href="tel:+507 6673-2524" className="text-black">
+            +507 6673-2524
           </a>
         </div>
       </div>
