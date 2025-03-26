@@ -65,8 +65,8 @@ const ProjectsComponent = () => {
     "/assets/proyectos/medidor_electrico.jpg",
     "/assets/proyectos/2500_kva.jpg",
     "/assets/proyectos/equipo.jpg",
-    "/assets/proyectos/equipo_de_trabajo.jpg",
-    "/assets/proyectos/equipo_de_trabajo_2.jpg",
+    "/assets/proyectos/equipo_de_trabajo_3.jpg",
+    "/assets/proyectos/equipo_de_trabajo_4.jpg",
     "/assets/proyectos/voith_y_indar.jpg",
   ];
 
