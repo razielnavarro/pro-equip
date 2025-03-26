@@ -1,16 +1,19 @@
-const AboutUs = () => {
+export default function AboutUs() {
   return (
     <section className="bg-white py-12 px-4 relative z-0">
-      <div className="absolute inset-0 w-2/5 bg-red-800"></div>
+      {/* Red block only on xl+ */}
+      <div className="hidden md:block absolute inset-0 w-2/5 bg-red-800"></div>
+
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10">
         {/* LEFT COLUMN: Image */}
         <div className="w-full md:w-1/2">
           <img
             src="/assets/poste_electrico.jpg"
             alt="Hombres con cascos de construcción"
-            className="rounded-lg shadow-lg object-cover h-120"
+            className="rounded-lg shadow-lg object-cover w-full h-auto md:h-120"
           />
         </div>
+
         {/* RIGHT COLUMN: Text Content */}
         <div className="w-full md:w-1/2 pt-2">
           {/* Small Heading */}
@@ -44,10 +47,9 @@ const AboutUs = () => {
             garantizando eficiencia y sostenibilidad en cada proyecto.
           </p>
 
-          {/* Bullet Points or Services List */}
+          {/* Bullet Points */}
           <ul className="mt-6 space-y-2 text-gray-800">
             <li className="flex items-center">
-              {/* Optional Icon */}
               <svg
                 className="w-5 h-5 text-red-600 mr-2"
                 fill="none"
@@ -116,6 +118,4 @@ const AboutUs = () => {
       </div>
     </section>
   );
-};
-
-export default AboutUs;
+}
