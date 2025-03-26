@@ -18,7 +18,7 @@ const Navbar = () => {
         {/* Logo on navbar */}
         <div>
           <Link href="/" prefetch={true}>
-            <img src="assets/logo.png" className="h-[80px]"></img>
+            <img src="assets/logo.png" className="h-[80px]" alt="Logo"></img>
           </Link>
         </div>
 
@@ -37,9 +37,9 @@ const Navbar = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 1h15M1 7h15M1 13h15"
             />
           </svg>
@@ -49,12 +49,12 @@ const Navbar = () => {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } w-full md:block md:w-auto`}
+          } w-full md:block md:w-auto mx-auto`}
         >
-          <ul className="flex flex-col p-2 md:flex-row md:space-x-8 rtl:space-x-reserve md:bg-transparent mt-4 md:mt-0 font-medium bg-customPurple border rounded-lg border-purple-600 md:border-transparent">
-            <li>
+          <ul className="flex flex-col p-2 md:flex-row md:space-x-8 rtl:space-x-reserve md:bg-transparent mt-4 md:mt-0 font-medium border rounded-lg border-transparent text-left">
+            <li className="border-b border-gray-300 md:border-none py-3 px-6">
               <Link
-                className={`block py-2 px-3 ${
+                className={`block ${
                   pathname === "/inicio"
                     ? "text-black"
                     : "text-black hover:text-red-800"
@@ -65,9 +65,9 @@ const Navbar = () => {
                 Inicio
               </Link>
             </li>
-            <li>
+            <li className="border-b border-gray-300 md:border-none py-3 px-6">
               <Link
-                className={`block py-2 px-3 ${
+                className={`block ${
                   pathname === "/nosotros"
                     ? "text-black"
                     : "text-black hover:text-red-800"
@@ -78,9 +78,9 @@ const Navbar = () => {
                 Nosotros
               </Link>
             </li>
-            <li>
+            <li className="border-b border-gray-300 md:border-none py-3 px-6">
               <Link
-                className={`block py-2 px-3 ${
+                className={`block ${
                   pathname === "/servicios"
                     ? "text-black"
                     : "text-black hover:text-red-800"
@@ -91,9 +91,9 @@ const Navbar = () => {
                 Servicios
               </Link>
             </li>
-            <li>
+            <li className="border-b border-gray-300 md:border-none py-3 px-6">
               <Link
-                className={`block py-2 px-3 ${
+                className={`block ${
                   pathname === "/proyectos"
                     ? "text-black"
                     : "text-black hover:text-red-800"
@@ -105,13 +105,6 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-        </div>
-
-        {/* Phone number */}
-        <div>
-          <a href="tel:+507 6673-2524" className="text-black">
-            +507 6673-2524
-          </a>
         </div>
       </div>
     </nav>
