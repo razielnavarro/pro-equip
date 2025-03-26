@@ -8,7 +8,7 @@ export default function AboutUs() {
         {/* LEFT COLUMN: Image */}
         <div className="w-full md:w-1/2">
           <img
-            src="/assets/poste_electrico.jpg"
+            src="/assets/transformador.jpeg"
             alt="Hombres con cascos de construcción"
             className="rounded-lg shadow-lg object-cover w-full h-auto md:h-120"
           />
