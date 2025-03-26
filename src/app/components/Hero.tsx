@@ -9,9 +9,11 @@ const HeroSection = () => {
               Energizando Panamá con Soluciones Eléctricas Confiables
             </h1>
 
-            <button className="mt-4 px-6 py-3 bg-red-800 hover:bg-red-600 text-white font-semibold rounded-lg shadow-lg transition duration-300 cursor-pointer">
-              Contáctanos
-            </button>
+            <a href="https://wa.me/50766732524">
+              <button className="mt-4 px-6 py-3 bg-red-800 hover:bg-red-600 text-white font-semibold rounded-lg shadow-lg transition duration-300 cursor-pointer">
+                Contáctanos
+              </button>
+            </a>
           </div>
         </section>
       </div>

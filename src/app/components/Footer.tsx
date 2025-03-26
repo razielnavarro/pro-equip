@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                 className="h-6 w-6 inline-block"
               />
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="https://wa.me/50766732524" className="hover:text-white">
               <img
                 src="assets/whatsapp-icon.svg"
                 alt="WhatsApp"
