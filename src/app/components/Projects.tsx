@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, TouchEvent } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProjectsSectionProps {
@@ -10,15 +10,19 @@ interface ProjectsSectionProps {
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
   const [showMore, setShowMore] = useState(false);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
   const toggleShowMore = () => setShowMore(!showMore);
   const openImage = (index: number) => setSelectedImage(index);
   const closeImage = () => setSelectedImage(null);
+
   const prevImage = () => {
     if (selectedImage !== null) {
       setSelectedImage((prev) => (prev! > 0 ? prev! - 1 : images.length - 1));
     }
   };
+
   const nextImage = () => {
     if (selectedImage !== null) {
       setSelectedImage((prev) => (prev! < images.length - 1 ? prev! + 1 : 0));
@@ -43,6 +47,30 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [selectedImage]);
+
+  // Handle swipe gestures
+  const handleTouchStart = (e: TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX !== null && touchEndX !== null) {
+      const deltaX = touchStartX - touchEndX;
+      const swipeThreshold = 50; // Minimum distance to detect a swipe
+
+      if (deltaX > swipeThreshold) {
+        nextImage(); // Swipe left
+      } else if (deltaX < -swipeThreshold) {
+        prevImage(); // Swipe right
+      }
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
 
   return (
     <section className="py-12 mx-auto w-full xl:w-3/4">
@@ -81,7 +109,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
       </div>
 
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <button
             className="absolute top-5 right-5 text-white text-3xl"
             onClick={closeImage}
