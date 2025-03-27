@@ -11,7 +11,7 @@ interface ServicesSectionProps {
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
   return (
-    <section className="mx-auto my-2 w-full p-8">
+    <section className="mx-auto my-2 w-full p-2 xl:p-8">
       <h2 className="text-5xl font-bold text-center mb-4 text-black">
         Nuestros Servicios
       </h2>
