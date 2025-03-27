@@ -1,21 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProjectsSectionProps {
-  images: string[]; // Array of image URLs
+  images: string[];
 }
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
   const [showMore, setShowMore] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Function to handle the toggle of showing more images
   const toggleShowMore = () => setShowMore(!showMore);
+  const openImage = (index: number) => setSelectedImage(index);
+  const closeImage = () => setSelectedImage(null);
+  const prevImage = () => {
+    if (selectedImage !== null) {
+      setSelectedImage((prev) => (prev! > 0 ? prev! - 1 : images.length - 1));
+    }
+  };
+  const nextImage = () => {
+    if (selectedImage !== null) {
+      setSelectedImage((prev) => (prev! < images.length - 1 ? prev! + 1 : 0));
+    }
+  };
 
   return (
-    <section className="py-12 mx-auto w-3/4">
+    <section className="py-12 mx-auto w-full xl:w-3/4">
       <div className="container mx-auto px-4">
-        {/* Section Heading */}
         <h2 className="text-5xl font-bold text-center mb-4 text-gray-800">
           Proyectos
         </h2>
@@ -23,12 +35,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
           <div className="w-24 h-1 bg-red-800"></div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {images.slice(0, showMore ? images.length : 8).map((image, index) => (
             <div
               key={index}
-              className="relative group overflow-hidden rounded-lg shadow-lg"
+              className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
+              onClick={() => openImage(index)}
             >
               <img
                 src={image}
@@ -39,7 +51,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
           ))}
         </div>
 
-        {/* Show More Button */}
         <div className="text-center mt-6">
           <button
             onClick={toggleShowMore}
@@ -49,11 +60,38 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
           </button>
         </div>
       </div>
+
+      {selectedImage !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <button
+            className="absolute top-5 right-5 text-white text-3xl"
+            onClick={closeImage}
+          >
+            <X size={32} />
+          </button>
+          <button
+            className="absolute left-5 text-white text-3xl"
+            onClick={prevImage}
+          >
+            <ChevronLeft size={40} />
+          </button>
+          <img
+            src={images[selectedImage]}
+            alt={`Project ${selectedImage + 1}`}
+            className="max-w-full max-h-full rounded-lg shadow-lg"
+          />
+          <button
+            className="absolute right-5 text-white text-3xl"
+            onClick={nextImage}
+          >
+            <ChevronRight size={40} />
+          </button>
+        </div>
+      )}
     </section>
   );
 };
 
-// Example usage of the ProjectsSection component
 const ProjectsComponent = () => {
   const projectImages: string[] = [
     "/assets/proyectos/conexion_anillo.jpg",
