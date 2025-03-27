@@ -1,28 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-white text-black py-2">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 py-2 transition-all duration-300 md:relative ${
+        isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
+      } md:bg-white md:static`}
+    >
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
-        {/* Logo on navbar */}
+        {/* Logo */}
         <div>
           <Link href="/" prefetch={true}>
-            <img src="assets/logo.png" className="h-[80px]" alt="Logo"></img>
+            <img src="assets/logo.png" className="h-[80px]" alt="Logo" />
           </Link>
         </div>
 
-        {/* Hamburger icon for mobile */}
+        {/* Hamburger Icon */}
         <button
           onClick={toggleMenu}
           type="button"
@@ -45,65 +59,36 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Navigation links */}
+        {/* Navigation Links */}
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
           } w-full md:block md:w-auto mx-auto`}
         >
           <ul className="flex flex-col p-2 md:flex-row md:space-x-8 rtl:space-x-reserve md:bg-transparent mt-4 md:mt-0 font-medium border rounded-lg border-transparent text-left">
-            <li className="border-b border-gray-300 md:border-none py-3 px-6">
-              <Link
-                className={`block ${
-                  pathname === "/inicio"
-                    ? "text-black"
-                    : "text-black hover:text-red-800"
-                }`}
-                href={"#inicio"}
-                onClick={toggleMenu}
+            {[
+              { href: "#inicio", label: "Inicio" },
+              { href: "#nosotros", label: "Nosotros" },
+              { href: "#servicios", label: "Servicios" },
+              { href: "#proyectos", label: "Proyectos" },
+            ].map((item, index) => (
+              <li
+                key={index}
+                className="border-b border-gray-300 md:border-none py-3 px-6"
               >
-                Inicio
-              </Link>
-            </li>
-            <li className="border-b border-gray-300 md:border-none py-3 px-6">
-              <Link
-                className={`block ${
-                  pathname === "/nosotros"
-                    ? "text-black"
-                    : "text-black hover:text-red-800"
-                }`}
-                href={"#nosotros"}
-                onClick={toggleMenu}
-              >
-                Nosotros
-              </Link>
-            </li>
-            <li className="border-b border-gray-300 md:border-none py-3 px-6">
-              <Link
-                className={`block ${
-                  pathname === "/servicios"
-                    ? "text-black"
-                    : "text-black hover:text-red-800"
-                }`}
-                href={"#servicios"}
-                onClick={toggleMenu}
-              >
-                Servicios
-              </Link>
-            </li>
-            <li className="border-b border-gray-300 md:border-none py-3 px-6">
-              <Link
-                className={`block ${
-                  pathname === "/proyectos"
-                    ? "text-black"
-                    : "text-black hover:text-red-800"
-                }`}
-                href={"#proyectos"}
-                onClick={toggleMenu}
-              >
-                Proyectos
-              </Link>
-            </li>
+                <Link
+                  className={`block ${
+                    pathname === item.href
+                      ? "text-black"
+                      : "text-black hover:text-red-800"
+                  }`}
+                  href={item.href}
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
