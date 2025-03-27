@@ -19,7 +19,7 @@ const HeroSection = () => {
       </div>
 
       {/* Diamond/Polygon Image on top */}
-      <div className="absolute top-[15%] sm:top-[10%] md:top-[6%] lg:top-[8%] xl:top-[54%] left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 xl:left-auto xl:right-10 xl:translate-x-0 xl:transform xl:-translate-y-1/2 z-15 w-[340px] sm:w-[340px] md:w-[400px] xl:w-auto">
+      <div className="absolute top-[10%] sm:top-[10%] md:top-[6%] lg:top-[8%] xl:top-[54%] left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 xl:left-auto xl:right-10 xl:translate-x-0 xl:transform xl:-translate-y-1/2 z-15 w-[340px] sm:w-[340px] md:w-[400px] xl:w-auto">
         <img
           src="/assets/diamondHigh.png"
           alt="Worker"
