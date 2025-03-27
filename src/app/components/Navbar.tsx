@@ -24,9 +24,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 py-2 transition-all duration-300 md:relative ${
-        isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
-      } md:bg-white md:static`}
+      className={`w-full py-2 transition-all duration-300 ${
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-white"
+      } md:static`}
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
         {/* Logo */}

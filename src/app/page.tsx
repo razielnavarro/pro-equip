@@ -9,31 +9,32 @@ import HeroSection from "./components/Hero";
 export default function Home() {
   return (
     <>
-      <header>
-        {/*Contact Info Strip at the Top */}
+      <header className="w-full z-50">
+        {/* Contact Info - always static */}
         <ContactStrip />
-
-        {/* Navbar */}
       </header>
-      <main>
+
+      {/* Sticky Navbar Container */}
+      <div className="sticky top-0 z-40">
         <Navbar />
-        {/* Section with name and role */}
+      </div>
+
+      <main>
         <HeroSection />
 
-        {/* Section with about us */}
         <div id="nosotros" className="z-0">
           <AboutUs />
         </div>
-        {/* Section with services */}
+
         <section id="servicios">
           <ServicesComponent />
         </section>
-        {/* Section with projects */}
+
         <div id="proyectos">
           <ProjectsComponent />
         </div>
       </main>
-      {/* Footer for the website */}
+
       <Footer />
     </>
   );
