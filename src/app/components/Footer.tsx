@@ -2,10 +2,18 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-red-800 text-gray-300 py-10">
+    // On mobile: larger vertical padding (py-20).
+    // From sm breakpoint upwards: revert to smaller padding (py-10).
+    <footer className="bg-red-800 text-gray-300 py-20 sm:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Footer Links and Brand */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 text-sm text-center">
+        {/* 
+          On mobile: use flex-col so everything stacks top-to-bottom.
+          From sm breakpoint: switch to grid with 3 columns (as before).
+        */}
+        <div
+          className="mt-10 flex flex-col items-center space-y-6 text-sm text-center
+                        sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0"
+        >
           {/* Brand / Logo */}
           <div className="flex flex-col items-center space-y-2">
             <div className="flex items-center space-x-2 justify-center">
