@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProjectsSectionProps {
@@ -24,6 +24,25 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
       setSelectedImage((prev) => (prev! < images.length - 1 ? prev! + 1 : 0));
     }
   };
+
+  // Listen for Escape key to close the image modal
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    };
+
+    if (selectedImage !== null) {
+      document.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
 
   return (
     <section className="py-12 mx-auto w-full xl:w-3/4">
