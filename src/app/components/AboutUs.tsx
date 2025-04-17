@@ -28,8 +28,8 @@ export default function AboutUs() {
 
           {/* Paragraph Text */}
           <p className="text-gray-700 leading-relaxed mb-6">
-            Es una empresa panameña especializada en el diseño y construcción de
-            proyectos eléctricos en media y baja tensión.
+            Proequip es una empresa panameña especializada en el diseño y
+            construcción de proyectos eléctricos en media y baja tensión.
           </p>
 
           {/* Additional Paragraph Text */}
