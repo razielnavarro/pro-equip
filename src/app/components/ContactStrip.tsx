@@ -18,6 +18,17 @@ const ContactStrip = () => {
         />
         <span>WhatsApp</span>
       </a>
+      <a
+        href="https://www.instagram.com/proequipsa/"
+        className="flex items-center gap-1 hover:text-orange-300"
+      >
+        <img
+          src="/assets/instagram-icon.svg"
+          alt="WhatsApp"
+          className="w-5 h-5"
+        />
+        <span>Instagram</span>
+      </a>
     </div>
   );
 };
