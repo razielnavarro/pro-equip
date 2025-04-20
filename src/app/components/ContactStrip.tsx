@@ -20,7 +20,7 @@ const ContactStrip = () => {
       </a>
       <a
         href="https://www.instagram.com/proequipsa/"
-        className="flex items-center gap-1 hover:text-orange-300"
+        className="hidden sm:flex items-center gap-1 hover:text-orange-300"
       >
         <img
           src="/assets/instagram-icon.svg"
