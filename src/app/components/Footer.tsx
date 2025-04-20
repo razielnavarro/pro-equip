@@ -47,7 +47,10 @@ const Footer: React.FC = () => {
 
           {/* Social Media Icons */}
           <div className="space-y-2 flex justify-center gap-2">
-            <a href="#" className="hover:text-white">
+            <a
+              href="https://www.instagram.com/proequipsa/"
+              className="hover:text-white"
+            >
               <img
                 src="assets/instagram-icon.svg"
                 alt="Instagram"
