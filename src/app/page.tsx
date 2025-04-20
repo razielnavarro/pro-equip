@@ -5,6 +5,7 @@ import AboutUs from "./components/AboutUs";
 import ProjectsComponent from "./components/Projects";
 import Footer from "./components/Footer";
 import HeroSection from "./components/Hero";
+import PruebasTTR from "./components/pruebasTTR";
 
 export default function Home() {
   return (
@@ -29,6 +30,10 @@ export default function Home() {
         <section id="servicios">
           <ServicesComponent />
         </section>
+
+        <div>
+          <PruebasTTR />
+        </div>
 
         <div id="proyectos">
           <ProjectsComponent />
