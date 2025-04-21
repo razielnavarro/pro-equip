@@ -65,7 +65,7 @@ const ServicesComponent = () => {
       icon: "/assets/icons-new/solar.svg",
     },
     {
-      title: "Sistemas de Puesta a Tierra y Corrección de Potencia",
+      title: "Corrección de factor de Potencia",
       icon: "/assets/icons-new/tierra.svg",
     },
     {
