@@ -4,7 +4,7 @@ const HeroSection = () => {
       {/* Background image hero */}
       <div className="flex flex-col-reverse items-center xl:flex-row xl:justify-center h-full w-full bg-[url('/assets/FullBg.png')] bg-no-repeat bg-cover bg-center">
         <section className="gap-y-2 text-center xl:text-left px-10 mb-12 w-full flex items-center justify-center xl:justify-start">
-          <div className="max-w-[800px]">
+          <div className="max-w-[600px]">
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-white font-bold">
               Energizando Panamá con Soluciones Eléctricas Confiables
             </h1>
