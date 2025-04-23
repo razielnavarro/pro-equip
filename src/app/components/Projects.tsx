@@ -78,7 +78,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
               <Image
                 src={image}
                 alt={`Project ${index + 1}`}
-                fill
                 className="object-cover w-full h-full"
               />
             </div>
