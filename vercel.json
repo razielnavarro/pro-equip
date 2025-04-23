@@ -1,0 +1,30 @@
+{
+    "headers": [
+      {
+        "source": "/(.*)\\.(js|css|svg|png|jpg|jpeg|webp|avif)$",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "https://www.proequip.com.pa",
+        "permanent": true
+      }
+    ]
+  }
+  
