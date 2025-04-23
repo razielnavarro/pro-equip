@@ -1,3 +1,6 @@
+// src/app/components/AboutUs.tsx
+import Image from "next/image";
+
 export default function AboutUs() {
   return (
     <section className="bg-white py-12 px-4 relative z-0">
@@ -7,9 +10,11 @@ export default function AboutUs() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10">
         {/* LEFT COLUMN: Image */}
         <div className="w-full md:w-1/2">
-          <img
+          <Image
             src="/assets/transformador.jpeg"
-            alt="Hombres con cascos de construcción"
+            alt="Transformador"
+            width={400}
+            height={480}
             className="rounded-lg shadow-lg object-cover w-full h-auto md:h-120"
           />
         </div>

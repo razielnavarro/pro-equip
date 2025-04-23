@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.proequip.com.pa
+
+# Sitemaps
+Sitemap: https://www.proequip.com.pa/sitemap.xml

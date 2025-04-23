@@ -1,3 +1,6 @@
+// src/app/components/Hero.tsx
+import Image from "next/image";
+
 const HeroSection = () => {
   return (
     <div className="relative min-h-[600px] h-[50vh] xl:h-screen w-full overflow-visible z-20 flex justify-center items-center xl:items-start">
@@ -20,9 +23,11 @@ const HeroSection = () => {
 
       {/* Diamond/Polygon Image on top */}
       <div className="absolute top-[10%] sm:top-[10%] md:top-[6%] lg:top-[8%] xl:top-[54%] left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 xl:left-auto xl:right-10 xl:translate-x-0 xl:transform xl:-translate-y-1/2 z-15 w-[340px] sm:w-[340px] md:w-[400px] xl:w-auto">
-        <img
+        <Image
           src="/assets/diamondHigh.png"
           alt="Worker"
+          width={992}
+          height={600}
           className="w-full h-auto xl:w-[817px] 2xl:w-[992px]"
         />
       </div>

@@ -1,8 +1,10 @@
+// src/app/components/Navbar.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -32,7 +34,13 @@ const Navbar = () => {
         {/* Logo */}
         <div>
           <Link href="/" prefetch={true}>
-            <img src="assets/logo.png" className="h-[80px]" alt="Logo" />
+            <Image
+              src="/assets/logo.png"
+              alt="Logo"
+              width={80}
+              height={80}
+              className="h-[80px] w-auto"
+            />
           </Link>
         </div>
 
