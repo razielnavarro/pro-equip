@@ -28,33 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ElectricalContractor",
-            name: "Proyectos y Equipos Eléctricos, S.A.",
-            url: "https://www.proequip.com.pa/",
-            logo: "https://www.proequip.com.pa/assets/logo.png",
-            telephone: "+50766732524",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Los Algarrobos, Dolega, Entrada antes de Iglesia Evangelica",
-              addressLocality: "Chiriquí",
-              addressRegion: "Dolega",
-              postalCode: "04086",
-              addressCountry: "PA",
-            },
-            openingHours: ["Mo–Fr 08:00–17:00"],
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 8.501427959077002,
-              longitude: -82.42544596590086,
-            },
-          }),
-        }}
-      />
       <body className={`${defaultFont.className} antialiased relative`}>
         {children}
       </body>
