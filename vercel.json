@@ -18,13 +18,6 @@
           }
         ]
       }
-    ],
-    "redirects": [
-      {
-        "source": "/",
-        "destination": "https://www.proequip.com.pa",
-        "permanent": true
-      }
     ]
   }
   
