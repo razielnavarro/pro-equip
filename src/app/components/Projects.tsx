@@ -1,7 +1,9 @@
+// src/app/components/Projects.tsx
 "use client";
 
 import React, { useState, useEffect, TouchEvent } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 interface ProjectsSectionProps {
   images: string[];
@@ -29,44 +31,28 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
     }
   };
 
-  // Listen for Escape key to close the image modal
+  // Escape to close
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeImage();
-      }
+      if (event.key === "Escape") closeImage();
     };
-
     if (selectedImage !== null) {
       document.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.removeEventListener("keydown", handleKeyDown);
     }
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage]);
 
-  // Handle swipe gestures
-  const handleTouchStart = (e: TouchEvent) => {
+  // Touch handlers
+  const handleTouchStart = (e: TouchEvent) =>
     setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
+  const handleTouchMove = (e: TouchEvent) =>
     setTouchEndX(e.touches[0].clientX);
-  };
-
   const handleTouchEnd = () => {
     if (touchStartX !== null && touchEndX !== null) {
       const deltaX = touchStartX - touchEndX;
-      const swipeThreshold = 50; // Minimum distance to detect a swipe
-
-      if (deltaX > swipeThreshold) {
-        nextImage(); // Swipe left
-      } else if (deltaX < -swipeThreshold) {
-        prevImage(); // Swipe right
-      }
+      const threshold = 50;
+      if (deltaX > threshold) nextImage();
+      else if (deltaX < -threshold) prevImage();
     }
     setTouchStartX(null);
     setTouchEndX(null);
@@ -86,13 +72,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
           {images.slice(0, showMore ? images.length : 8).map((image, index) => (
             <div
               key={index}
-              className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"
+              className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer w-full h-48"
               onClick={() => openImage(index)}
             >
-              <img
+              <Image
                 src={image}
                 alt={`Project ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
           ))}
@@ -127,11 +113,15 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
           >
             <ChevronLeft size={40} />
           </button>
-          <img
-            src={images[selectedImage]}
-            alt={`Project ${selectedImage + 1}`}
-            className="max-w-full max-h-full rounded-lg shadow-lg"
-          />
+          <div className="relative max-w-[90vw] max-h-[90vh]">
+            <Image
+              src={images[selectedImage]}
+              alt={`Project ${selectedImage + 1}`}
+              width={800}        // replace with real intrinsic width if known
+              height={600}       // replace with real intrinsic height if known
+              className="max-w-full max-h-full rounded-lg shadow-lg object-contain"
+            />
+          </div>
           <button
             className="absolute right-5 text-white text-3xl"
             onClick={nextImage}
@@ -160,11 +150,7 @@ const ProjectsComponent = () => {
     "/assets/proyectos/voith_y_indar.jpg",
   ];
 
-  return (
-    <div>
-      <ProjectsSection images={projectImages} />
-    </div>
-  );
+  return <ProjectsSection images={projectImages} />;
 };
 
 export default ProjectsComponent;

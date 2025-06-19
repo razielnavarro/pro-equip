@@ -1,14 +1,21 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
-const pruebasTTR = () => {
+const PruebasTTR = () => {
   return (
-    <section
-      className="w-full h-[60vh] bg-cover bg-left md:bg-[center_50%] flex items-center justify-start"
-      style={{ backgroundImage: "url('/assets/PruebasTTR.png')" }}
-    >
-      <div className="bg-black/50 md:bg-black/20 w-full h-full flex items-center">
-        <div className="text-white px-6 sm:px-10 max-w-xl">
+    <section className="relative w-full h-[60vh] flex items-center justify-start overflow-hidden">
+      <Image
+        src="/assets/PruebasTTR.png"
+        alt="Pruebas TTR"
+        fill
+        style={{ objectFit: "cover", objectPosition: "left" }}
+        priority
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50 md:bg-black/20 flex items-center">
+        <div className="relative text-white px-6 sm:px-10 max-w-xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Pruebas TTR
           </h1>
@@ -28,4 +35,4 @@ const pruebasTTR = () => {
   );
 };
 
-export default pruebasTTR;
+export default PruebasTTR;

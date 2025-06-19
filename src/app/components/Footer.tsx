@@ -1,4 +1,6 @@
+// src/app/components/Footer.tsx
 import React from "react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -17,10 +19,12 @@ const Footer: React.FC = () => {
           {/* Brand / Logo */}
           <div className="flex flex-col items-center space-y-2">
             <div className="flex items-center space-x-2 justify-center">
-              <img
-                src="assets/logo.png"
-                className="h-[40px]"
+              <Image
+                src="/assets/logo.png"
                 alt="Proequip Logo"
+                width={40}
+                height={40}
+                className="h-[40px] w-auto"
               />
               <span className="text-xl font-semibold text-white">PROEQUIP</span>
             </div>
@@ -51,16 +55,20 @@ const Footer: React.FC = () => {
               href="https://www.instagram.com/proequipsa/"
               className="hover:text-white"
             >
-              <img
-                src="assets/instagram-icon.svg"
+              <Image
+                src="/assets/instagram-icon.svg"
                 alt="Instagram"
+                width={24}
+                height={24}
                 className="h-6 w-6 inline-block"
               />
             </a>
             <a href="https://wa.me/50766732524" className="hover:text-white">
-              <img
-                src="assets/whatsapp-icon.svg"
+              <Image
+                src="/assets/whatsapp-icon.svg"
                 alt="WhatsApp"
+                width={24}
+                height={24}
                 className="h-6 w-6 inline-block"
               />
             </a>

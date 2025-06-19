@@ -1,4 +1,6 @@
+// src/app/components/Services.tsx
 import React from "react";
+import Image from "next/image";
 
 interface Service {
   icon: string;
@@ -20,16 +22,18 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
       </div>
 
       <div className="rounded-xl p-8 bg-gradient-to-r from-blue-800 to-blue-900">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 w-4/4 xl:w-3/4 mx-auto auto-rows-fr">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 w-full xl:w-3/4 mx-auto auto-rows-fr">
           {services.map((service, index) => (
             <div
               key={index}
               className="rounded-md flex flex-col items-center justify-between p-6 h-full bg-opacity-10"
             >
               <div className="bg-gray-100 p-4 rounded-md mb-4">
-                <img
+                <Image
                   src={service.icon}
                   alt={service.title}
+                  width={64}
+                  height={64}
                   className="h-16 w-16"
                 />
               </div>
@@ -75,11 +79,7 @@ const ServicesComponent = () => {
     },
   ];
 
-  return (
-    <div>
-      <ServicesSection services={servicesData} />
-    </div>
-  );
+  return <ServicesSection services={servicesData} />;
 };
 
 export default ServicesComponent;
