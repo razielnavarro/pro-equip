@@ -45,8 +45,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
   // Touch handlers
   const handleTouchStart = (e: TouchEvent) =>
     setTouchStartX(e.touches[0].clientX);
-  const handleTouchMove = (e: TouchEvent) =>
-    setTouchEndX(e.touches[0].clientX);
+  const handleTouchMove = (e: TouchEvent) => setTouchEndX(e.touches[0].clientX);
   const handleTouchEnd = () => {
     if (touchStartX !== null && touchEndX !== null) {
       const deltaX = touchStartX - touchEndX;
@@ -78,6 +77,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
               <Image
                 src={image}
                 alt={`Project ${index + 1}`}
+                width={300}
+                height={200}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -117,8 +118,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ images }) => {
             <Image
               src={images[selectedImage]}
               alt={`Project ${selectedImage + 1}`}
-              width={800}        // replace with real intrinsic width if known
-              height={600}       // replace with real intrinsic height if known
+              width={800}
+              height={600}
               className="max-w-full max-h-full rounded-lg shadow-lg object-contain"
             />
           </div>
